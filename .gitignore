@@ -108,3 +108,5 @@ temp/
 # VSC Patch
 # Ignore all local history of files
 .history
+
+qrcode.html
