@@ -1,0 +1,57 @@
+{
+  "name": "2fa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "keywords": [],
+  "author": "Boran Seckin <me@boranseckin.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint . --ext .ts",
+    "start": "node dist/index.js",
+    "start:dev": "node --inspect=5858 -r ts-node/register ./src/index.ts",
+    "start:watch": "nodemon",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run lint",
+    "test": "echo 'Error: no test specified' && exit 1",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
+    "docs": "typedoc -out docs ./src"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules",
+      "docs"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm run start:dev",
+    "ext": "ts"
+  },
+  "dependencies": {
+    "clear": "^0.1.0",
+    "dotenv": "^8.2.0",
+    "enquirer": "^2.3.4",
+    "hi-base32": "^0.5.0",
+    "qrcode": "^1.4.4"
+  },
+  "devDependencies": {
+    "@types/clear": "^0.1.0",
+    "@types/node": "^13.11.0",
+    "@types/qrcode": "^1.3.4",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-airbnb-typescript": "^7.2.0",
+    "eslint-plugin-import": "^2.20.2",
+    "nodemon": "^2.0.2",
+    "ts-node": "^8.8.2",
+    "typedoc": "^0.17.3",
+    "typescript": "^3.8.3"
+  }
+}
