@@ -4,6 +4,8 @@ import qrcode from 'qrcode';
 
 import twoFA from './2FA';
 
+import Config from './utils/config';
+
 import actionQuestion from './questions/action';
 import createQuestion from './questions/create';
 import verifyQuestion from './questions/verify';
@@ -40,13 +42,29 @@ const cli = async (): Promise<void> => {
     }
 
     case 'Existing': {
-      await verifyQuestion(process.env.secret || '');
+      await Config.readSecret()
+        .then(async (data) => {
+          await verifyQuestion(data.secret).catch((err) => console.log(err));
+        })
+        .catch(() => console.log('Config file not found!'));
       break;
     }
 
     case 'Show': {
-      console.log(`Secret: ${process.env.secret}`);
-      console.log(`QR Code: ${process.cwd()}/qrcode.html`);
+      await Config.readSecret()
+        .then((data) => {
+          console.log(`Secret: ${data.secret}`);
+
+          Config.checkExistence('./qrcode.html').then((exist) => {
+            if (exist) {
+              console.log(`QR Code: file://${process.cwd()}/qrcode.html`);
+            } else {
+              console.log('QR Code not found!');
+            }
+          });
+        })
+        .catch(() => console.log('Config file not found!'));
+
       break;
     }
 
