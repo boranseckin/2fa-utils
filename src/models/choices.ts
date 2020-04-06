@@ -1,3 +1,7 @@
+export interface ConfigModel {
+  secret: string;
+}
+
 export interface Answer {
   action: string;
   name: string;
