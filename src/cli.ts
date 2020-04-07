@@ -20,7 +20,6 @@ import verifyQuestion from './questions/verify';
 const createQRCode = async (name: string, email: string, secret: string): Promise<void> => {
   const url = `otpauth://totp/${email}?secret=${secret}&issuer=${name}`;
   const result = await qrcode.toDataURL(url);
-  fs.writeFileSync('./.env', `secret=${secret}`);
   fs.writeFileSync('./qrcode.html', `<img src=${result}>`);
 };
 
@@ -37,6 +36,7 @@ const cli = async (): Promise<void> => {
 
       const secret = twoFA.generateSecret(16);
 
+      Config.saveSecret(secret);
       createQRCode(name, email, secret);
       break;
     }
