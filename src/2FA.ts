@@ -97,11 +97,13 @@ export default class twoFA {
    *
    * @returns Time-based one time password
    */
-  static generateTOTP(secret: string, window: number = 0): number {
+  static generateTOTP(secret: string, window: number = 0): string {
     // Counter will increment every 30 seconds.
     const counter: number = Math.floor(Date.now() / 30000);
     // Calculate the one-time password using the counter and the window.
-    return this.generateHOTP(secret, counter + window);
+    const hotp = this.generateHOTP(secret, counter + window).toString();
+    // If the first char is 0, don't let it be omitted as number.
+    return (hotp.length === 5) ? `0${hotp}` : hotp;
   }
 
   /**
@@ -121,8 +123,8 @@ export default class twoFA {
 
     for (let errorWindow = -window; errorWindow <= window; errorWindow += 1) {
       // For each window check the validity of the token.
-      const totp: number = this.generateTOTP(secret, errorWindow);
-      if (token === totp.toString()) return true;
+      const totp: string = this.generateTOTP(secret, errorWindow);
+      if (token === totp) return true;
     }
 
     return false;
