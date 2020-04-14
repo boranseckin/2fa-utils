@@ -2,8 +2,15 @@
   "name": "2fa-utils",
   "version": "1.0.0",
   "description": "TOTP and HOTP utilities.",
-  "main": "dist/index.js",
-  "keywords": [],
+  "main": "dist/2FA.js",
+  "types": "dist/2FA.d.ts",
+  "keywords": [
+    "TOTP",
+    "HOTP",
+    "OTP",
+    "2FA",
+    "Two Factor Authentication"
+  ],
   "author": "Boran Seckin <me@boranseckin.com>",
   "license": "MIT",
   "scripts": {
@@ -17,6 +24,14 @@
     "test": "echo 'Error: no test specified' && exit 1",
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
     "docs": "typedoc -out docs ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boranseckin/2fa.git"
+  },
+  "homepage": "https://github.com/boranseckin/2fa",
+  "bugs": {
+    "url": "https://github.com/boranseckin/2fa/issues"
   },
   "nodemonConfig": {
     "ignore": [
