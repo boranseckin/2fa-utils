@@ -1,0 +1,8 @@
+/node_modules/
+/docs/
+/src/
+.eslintrc.json
+.gitignore
+config.json
+qrcode.html
+tsconfig.json
