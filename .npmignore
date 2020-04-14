@@ -3,6 +3,7 @@
 /src/
 .eslintrc.json
 .gitignore
+.travis.yml
 config.json
 qrcode.html
 tsconfig.json
