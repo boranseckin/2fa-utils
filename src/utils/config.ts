@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import { ConfigModel } from '../models/choices';
+import { ConfigModel } from '../models/config';
 
 class Config {
   static configPath = './config.json';
