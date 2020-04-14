@@ -1,0 +1,13 @@
+deploy:
+  provider: npm
+  email: me@boranseckin.com
+  api_key:
+    secure: WeQV4bFssIq3koxWcZlE4GgFKJFpM6HhMuMS8DAtfIkCZ2u79BygeiMunU1ZAE4/nmboik/tXIymiwGwI7twH+HSIpj8iNngbENfH9petqzUzM4ByYNAQrHE/eM1i+PSvtLtYbW0Mhg3AOGHR0/706159uV+7mg/SJ21fHs8t1ngg/luu+htb2alnNGsgqu3iqOtsKP3gdqnzY9UWjT+uGtw2f1Zchc5LQRlauiJ/IzQjm2Ta/KFyUdggd+cYmMF385PhQs2qw6VUAv7b9Ra4zaurtzSgNLM9v+skN0a2TaJVezn6SaSLIjBO76oSvwY6ky342BdA/GLyWAxRflsLGm4EEAQpJjw0FvvJzLukBJ5nKMITZT+1IhY6FGWR3C0aXDoVXRbX/UtAv08v8U6EwY0Pk/yI6YliKAwgGEQSDkoDltT045ygg91PRQmNTfImwAo66OQBwg2FW3nrNSV0WuLYjfXVqpQUfe+stwhP8llIyjiI3DDPJ6JbmEDiVjsEX79WX6mb7Mag3mNbwR8xSXKbra11a2TDnvU1m80NU8B1xwJxoLQ5X6A1W/6VawuV6fM6BQBl/3/wCoNmiPuqwMVK4NigOb09BY6OxzD4f35uEoE8qL1fiXUFVPswjXdBC+wc5x6y5NcZIg8CMMpWqIzvIQ57e5kgtTzbBWGyZg=
+  on:
+    tags: true
+    branch: master
+    repo: boranseckin/2fa-utils
+notifications:
+  email:	
+    on_success: never	
+    on_failure: never
