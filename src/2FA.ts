@@ -1,3 +1,9 @@
+/*
+ * [2FA-utils]{@link https://github.com/boranseckin/2fa}
+ * @author Boran Seckin <me@boranseckin.com>
+ * @license MIT
+ */
+
 import crypto, { Hmac } from 'crypto';
 import base32 from 'hi-base32';
 
@@ -76,7 +82,7 @@ export default class twoFA {
    *
    * @returns 4-byte binary code
    */
-  static dynamicTruncation(hmacValue: Buffer): number {
+  private static dynamicTruncation(hmacValue: Buffer): number {
     // Offset is the low-order 4 bits of the supplied string.
     // 0 <= Offset <= 15
     const offset = hmacValue[hmacValue.length - 1] & 0xf;
