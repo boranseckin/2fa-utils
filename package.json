@@ -20,8 +20,7 @@
     "start:watch": "nodemon",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "pretest": "npm run lint",
-    "test": "echo 'Error: no test specified' && exit 1",
+    "test": "npm run lint",
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
     "docs": "typedoc -out docs ./src"
   },
