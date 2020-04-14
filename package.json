@@ -48,10 +48,7 @@
     "ext": "ts"
   },
   "dependencies": {
-    "clear": "^0.1.0",
-    "enquirer": "^2.3.4",
-    "hi-base32": "^0.5.0",
-    "qrcode": "^1.4.4"
+    "hi-base32": "^0.5.0"
   },
   "devDependencies": {
     "@types/clear": "^0.1.0",
