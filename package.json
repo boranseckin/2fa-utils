@@ -27,11 +27,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/boranseckin/2fa.git"
+    "url": "https://github.com/boranseckin/2fa-utils.git"
   },
-  "homepage": "https://github.com/boranseckin/2fa",
+  "homepage": "https://github.com/boranseckin/2fa-utils",
   "bugs": {
-    "url": "https://github.com/boranseckin/2fa/issues"
+    "url": "https://github.com/boranseckin/2fa-utils/issues"
   },
   "nodemonConfig": {
     "ignore": [
