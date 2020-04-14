@@ -1,6 +1,6 @@
 {
   "name": "2fa-utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TOTP and HOTP utilities.",
   "main": "dist/2FA.js",
   "types": "dist/2FA.d.ts",
