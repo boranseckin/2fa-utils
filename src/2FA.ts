@@ -72,20 +72,20 @@ export default class twoFA {
    * Extract 4-byte dynamic binary code from a 20-byte HMAC-SHA-1 result.
    * Copied from [RFC 4226](https://tools.ietf.org/html/rfc4226).
    *
-   * @param hamcValue HMAC-SHA-1 result
+   * @param hmacValue HMAC-SHA-1 result
    *
    * @returns 4-byte binary code
    */
-  static dynamicTruncation(hamcValue: Buffer): number {
+  static dynamicTruncation(hmacValue: Buffer): number {
     // Offset is the low-order 4 bits of the supplied string.
     // 0 <= Offset <= 15
-    const offset = hamcValue[hamcValue.length - 1] & 0xf;
+    const offset = hmacValue[hmacValue.length - 1] & 0xf;
 
     return (
-      ((hamcValue[offset] & 0x7f) << 24)
-      | ((hamcValue[offset + 1] & 0xff) << 16)
-      | ((hamcValue[offset + 2] & 0xff) << 8)
-      | (hamcValue[offset + 3] & 0xff)
+      ((hmacValue[offset] & 0x7f) << 24)
+      | ((hmacValue[offset + 1] & 0xff) << 16)
+      | ((hmacValue[offset + 2] & 0xff) << 8)
+      | (hmacValue[offset + 3] & 0xff)
     );
   }
 
