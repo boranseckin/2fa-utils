@@ -1,7 +1,9 @@
 /node_modules/
 /docs/
 /src/
+/tests/
 .eslintrc.json
+.eslintignore
 .gitignore
 .travis.yml
 config.json
