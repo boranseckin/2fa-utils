@@ -23,11 +23,11 @@ describe('2FA Tests', () => {
 
   describe('generateHOTP()', () => {
 
-    test('should return number', () => {
+    test('should return string', () => {
       const secret = twoFA.generateSecret();
       const counter: number = Math.floor(Date.now() / 30000);
       const hotp = twoFA.generateHOTP(secret, counter);
-      expect(typeof hotp).toBe('number');
+      expect(typeof hotp).toBe('string');
     });
 
     test('should generate 6 char long number without arg', () => {
