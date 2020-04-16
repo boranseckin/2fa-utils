@@ -18,7 +18,8 @@
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "pretest": "npm run lint",
-    "test": "jest --runInBand",
+    "test": "jest --runInBand --coverage",
+    "test:open": "open ./coverage/lcov-report/index.html",
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
     "docs": "typedoc -out docs ./src"
   },
@@ -38,6 +39,7 @@
     "@types/node": "^13.11.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
+    "codecov": "^3.6.5",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-airbnb-typescript": "^7.2.0",
