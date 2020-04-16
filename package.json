@@ -17,7 +17,8 @@
     "lint": "eslint . --ext .ts",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "test": "npm run lint",
+    "pretest": "npm run lint",
+    "test": "jest --runInBand",
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
     "docs": "typedoc -out docs ./src"
   },
@@ -33,6 +34,7 @@
     "hi-base32": "^0.5.0"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.1",
     "@types/node": "^13.11.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
@@ -40,7 +42,17 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-airbnb-typescript": "^7.2.0",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
     "typedoc": "^0.17.3",
     "typescript": "^3.8.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/tests"
+    ]
   }
 }
