@@ -2,6 +2,7 @@
 /docs/
 /src/
 .eslintrc.json
+.eslintignore
 .gitignore
 .travis.yml
 config.json
