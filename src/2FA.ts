@@ -41,7 +41,7 @@ export default class twoFA {
    *
    * @returns One time password
    */
-  static generateHOTP(secret: string, counter: number, otpLength: number = 6): number {
+  static generateHOTP(secret: string, counter: number, otpLength: number = 6): string {
     // Decode base32 encoded secret into array of numbers.
     const decodedSecret: number[] = base32.decode.asBytes(secret);
     // Allocate an empty buffer of 8 bytes.
@@ -70,8 +70,16 @@ export default class twoFA {
     const code: number = this.dynamicTruncation(hmacResult);
 
     // Step 3: Compute an HTOP value
-    // Get the last 6 digits of the code.
-    return code % (10 ** otpLength);
+    // Get the last digits of the code according to otpLength.
+    let token = (code % (10 ** otpLength)).toString();
+
+    // Make sure the code matches the optLength
+    // Add zeros to the beginning if int parsing ommited any zeros
+    for (let i = otpLength; i > token.length; i -= 1) {
+      token = `0${token}`;
+    }
+
+    return token;
   }
 
   /**
@@ -107,9 +115,8 @@ export default class twoFA {
     // Counter will increment every 30 seconds.
     const counter: number = Math.floor(Date.now() / 30000);
     // Calculate the one-time password using the counter and the window.
-    const hotp = this.generateHOTP(secret, counter + window).toString();
-    // If the first char is 0, don't let it be omitted as number.
-    return (hotp.length === 5) ? `0${hotp}` : hotp;
+    const hotp = this.generateHOTP(secret, counter + window);
+    return hotp;
   }
 
   /**
