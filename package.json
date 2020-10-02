@@ -36,20 +36,20 @@
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
-    "@types/node": "^13.13.14",
+    "@types/node": "^13.13.21",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
-    "codecov": "^3.7.1",
+    "codecov": "^3.7.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-airbnb-typescript": "^7.2.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^23.20.0",
     "jest": "^25.5.4",
+    "lodash": "^4.17.20",
     "ts-jest": "^25.5.1",
     "typedoc": "^0.17.8",
-    "typescript": "^3.9.7",
-    "lodash": ">=4.17.19"
+    "typescript": "^3.9.7"
   },
   "jest": {
     "preset": "ts-jest",
