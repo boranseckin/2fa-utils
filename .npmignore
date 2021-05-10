@@ -3,6 +3,7 @@
 /src/
 /tests/
 /coverage/
+/.github/
 .eslintrc.json
 .eslintignore
 .gitignore
