@@ -22,7 +22,7 @@ export default class twoFA {
    *
    * @returns String of random secret
    */
-  static generateSecret(length: number = 16): string {
+  static generateSecret(length = 16): string {
     // Create a buffer of random bytes.
     const randomBuffer = crypto.randomBytes(length);
 
@@ -41,7 +41,7 @@ export default class twoFA {
    *
    * @returns One time password
    */
-  static generateHOTP(secret: string, counter: number, otpLength: number = 6): string {
+  static generateHOTP(secret: string, counter: number, otpLength = 6): string {
     // Decode base32 encoded secret into array of numbers.
     const decodedSecret: number[] = base32.decode.asBytes(secret);
     // Allocate an empty buffer of 8 bytes.
@@ -111,7 +111,7 @@ export default class twoFA {
    *
    * @returns Time-based one time password
    */
-  static generateTOTP(secret: string, window: number = 0): string {
+  static generateTOTP(secret: string, window = 0): string {
     // Counter will increment every 30 seconds.
     const counter: number = Math.floor(Date.now() / 30000);
     // Calculate the one-time password using the counter and the window.
@@ -128,9 +128,8 @@ export default class twoFA {
    *
    * @returns Whether the token is correct or not
    */
-  static verifyTOTP(token: string, secret: string, window: number = 1): boolean {
+  static verifyTOTP(token: string, secret: string, window = 1): boolean {
     if (Math.abs(+window) > 10) {
-      console.error('Window size is too large');
       return false;
     }
 

@@ -20,8 +20,7 @@
     "pretest": "npm run lint",
     "test": "jest --runInBand --coverage",
     "test:open": "open ./coverage/lcov-report/index.html",
-    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
-    "docs": "typedoc -out docs ./src"
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
   },
   "repository": {
     "type": "git",
@@ -35,27 +34,19 @@
     "hi-base32": "^0.5.0"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.3",
-    "@types/node": "^13.13.21",
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "codecov": "^3.7.2",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-config-airbnb-typescript": "^7.2.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^23.20.0",
-    "jest": "^25.5.4",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.10",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "codecov": "^3.8.3",
+    "eslint": "^7.32.0",
+    "jest": "^27.1.0",
     "lodash": "^4.17.21",
-    "ts-jest": "^25.5.1",
-    "typedoc": "^0.17.8",
-    "typescript": "^3.9.7"
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.2"
   },
   "jest": {
     "preset": "ts-jest",
-    "testEnvironment": "node",
-    "roots": [
-      "<rootDir>/tests"
-    ]
+    "testEnvironment": "node"
   }
 }
