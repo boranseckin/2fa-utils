@@ -75,13 +75,11 @@ export default class twoFA {
 
     // Make sure the code matches the optLength
     // Add zeros to the beginning if int parsing ommited any zeros
-    if (token.length < otpLength){
+    if (token.length < otpLength)
       for (let i = token.length; i < otpLength; i += 1) {
         token = `0${token}`;
       }
-      return token;
-    }
-      return token;
+    return token;
   }
 
   /**
