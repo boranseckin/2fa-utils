@@ -75,9 +75,7 @@ export default class twoFA {
 
     // Make sure the code matches the optLength
     // Add zeros to the beginning if int parsing ommited any zeros
-    for (let i = otpLength; i > token.length; i -= 1) {
-      token = `0${token}`;
-    }
+    token = token.padStart(otpLength, '0');
 
     return token;
   }
