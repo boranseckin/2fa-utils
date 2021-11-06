@@ -34,16 +34,19 @@ describe('2FA Tests', () => {
       const secret = twoFA.generateSecret();
       const counter: number = Math.floor(Date.now() / 30000);
       const hotp = twoFA.generateHOTP(secret, counter);
-      expect(hotp.toString().length).toBe(6);
+      expect(hotp.length).toBe(6);
     });
 
-    test('should generate 4 char long number with arg 4', () => {
+    test(`should generate a correct length token with random arg`, () => {
       const secret = twoFA.generateSecret();
       const counter: number = Math.floor(Date.now() / 30000);
-      const hotp = twoFA.generateHOTP(secret, counter, 4);
-      expect(hotp.toString().length).toBe(4);
-    });
-
+      for (let i = 0; i < 10000; i++) {
+        const length = Math.floor(Math.random() * 9) + 1
+        const hotp = twoFA.generateHOTP(secret, counter, length);
+        expect(hotp.length).toBe(length);
+      }
+    })
+      
   });
 
   describe('generateTOTP()', () => {
@@ -60,7 +63,7 @@ describe('2FA Tests', () => {
 
       const hotp = twoFA.generateHOTP(secret, counter);
       const totp = twoFA.generateTOTP(secret);
-      expect(totp).toBe(hotp.toString());
+      expect(totp).toBe(hotp);
     });
 
     test('should generate past token with arg -1', () => {
@@ -69,7 +72,7 @@ describe('2FA Tests', () => {
 
       const hotp = twoFA.generateHOTP(secret, (counter - 1));
       const totp = twoFA.generateTOTP(secret, -1);
-      expect(totp).toBe(hotp.toString());
+      expect(totp).toBe(hotp);
     });
 
     test('should generate future token with arg 1', () => {
@@ -78,7 +81,7 @@ describe('2FA Tests', () => {
 
       const hotp = twoFA.generateHOTP(secret, (counter + 1));
       const totp = twoFA.generateTOTP(secret, 1);
-      expect(totp).toBe(hotp.toString());
+      expect(totp).toBe(hotp);
     });
 
   });
