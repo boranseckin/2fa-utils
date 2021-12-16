@@ -11,7 +11,7 @@
     "2FA",
     "Two Factor Authentication"
   ],
-  "author": "Boran Seckin <me@boranseckin.com>",
+  "author": "Boran Seckin <boran@boranseckin.com>",
   "license": "MIT",
   "scripts": {
     "lint": "eslint . --ext .ts",

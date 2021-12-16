@@ -1,6 +1,6 @@
 /*
  * [2FA-utils]{@link https://github.com/boranseckin/2fa}
- * @author Boran Seckin <me@boranseckin.com>
+ * @author Boran Seckin <boran@boranseckin.com>
  * @license MIT
  */
 
