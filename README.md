@@ -1,6 +1,6 @@
 # Two-Factor Authentication
 [![npm](https://img.shields.io/npm/v/2fa-utils?style=for-the-badge)](https://www.npmjs.com/package/2fa-utils)
-[![Travis (.com)](https://img.shields.io/travis/com/boranseckin/2fa-utils?style=for-the-badge)](https://travis-ci.com/github/boranseckin/2fa-utils)
+[![Build](https://img.shields.io/github/actions/workflow/status/boranseckin/2fa-utils/node.js.yml?style=for-the-badge)](https://github.com/boranseckin/2fa-utils/actions/workflows/node.js.yml)
 [![Codecov](https://img.shields.io/codecov/c/gh/boranseckin/2fa-utils?style=for-the-badge)](https://codecov.io/gh/boranseckin/2fa-utils)
 
 Using the algorithm provided in [RFC 4226](https://tools.ietf.org/rfc/rfc4226), can generate and verify HMAC-based one-time password (HOTP) and time-based one-time password (TOTP).
