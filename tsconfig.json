@@ -10,14 +10,14 @@
     "strict": true,
     "noImplicitAny": true,
     "alwaysStrict": true,
-    "baseUrl": "./",
     "paths": {
       "*": [
-        "node_modules/*"
+        "./node_modules/*"
       ]
     },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
     "types": ["node", "jest"]
   },
   "include": [
